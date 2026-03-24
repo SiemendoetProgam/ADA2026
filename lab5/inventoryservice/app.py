@@ -1,8 +1,10 @@
 from flask import Flask, request
+from flask_cors import CORS
 
 from resources.product import Product, Products
 
 app = Flask(__name__)
+CORS(app, supports_credentials=True)  # Enables CORS for all routes. This is not recommend for production.
 product = Product()
 products = Products()
 
@@ -27,4 +29,5 @@ def update_order(pname):
     return product.put(pname, int(request.args.get('value')))
 
 
-app.run(host='0.0.0.0', port=5000, debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000, debug=True)

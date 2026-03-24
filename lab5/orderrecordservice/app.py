@@ -1,9 +1,11 @@
 from flask import Flask, request
 from flask import make_response
-from resources.order import Order, Orders
 from flask_cors import CORS
+
+from resources.order import Order, Orders
+
 app = Flask(__name__)
-CORS(app)  # This is not recommend for production.
+CORS(app, supports_credentials=True)  # Enables CORS for all routes. This is not recommend for production.
 orders = Orders()
 placeRecord = Order()
 
@@ -28,6 +30,7 @@ def delete_orders(id):
 @app.route('/orders/', methods=['POST'])
 def create_order():
     return orders.post(request)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
