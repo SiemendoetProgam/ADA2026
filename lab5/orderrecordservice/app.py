@@ -3,7 +3,7 @@ from flask import make_response
 from resources.order import Order, Orders
 from flask_cors import CORS
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})  # This is not recommend for production.
+CORS(app)  # This is not recommend for production.
 orders = Orders()
 placeRecord = Order()
 
