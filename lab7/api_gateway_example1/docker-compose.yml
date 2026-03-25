@@ -1,7 +1,7 @@
 services:  
-  apigatway:
+  apigateway:
     image: krakend:2.13.3
-    container_name: apigatway
+    container_name: apigateway
     volumes:
       - ./krakend:/etc/krakend/
     depends_on:
