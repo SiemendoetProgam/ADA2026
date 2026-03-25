@@ -1,7 +1,7 @@
 services:  
-  api_gatway:
+  apigatway:
     image: krakend:2.13.3
-    container_name: api_gatway_ct
+    container_name: apigatway
     volumes:
       - ./krakend:/etc/krakend/
     depends_on:
@@ -9,15 +9,15 @@ services:
       - order_record_service
     ports:
       - "8080:8081"
-  inventory_service:
+  inventoryservice:
     build:
       context: ./../../lab5/inventoryservice
-    container_name: inventory_service_ct
+    container_name: inventoryservice
     ports:
       - "5000:5000"
   order_record_service:
     build:
       context: ./../../lab5/orderrecordservice
-    container_name: order_record_service_ct
+    container_name: orderrecordservice
     ports:
       - "5001:5000"
