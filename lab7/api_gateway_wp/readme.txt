@@ -1,4 +1,4 @@
-How to get access token  https://cloud.google.com/sdk/gcloud/reference/auth/application-default/print-access-token
+How to get an access token  https://cloud.google.com/sdk/gcloud/reference/auth/application-default/print-access-token
 
 gcloud auth application-default print-access-token  
 

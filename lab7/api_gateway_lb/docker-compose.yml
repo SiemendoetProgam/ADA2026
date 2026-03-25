@@ -13,7 +13,7 @@ services:
   inventoryservice1:
     build:
       context: ./../../lab5/inventoryservice
-    container_name: inventory_service1
+    container_name: inventoryservice1
     ports:
       - "5000:5000"
   inventoryservice2:
